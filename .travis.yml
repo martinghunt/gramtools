@@ -8,8 +8,8 @@ before_install:
 python:
   - 3.5
 install:
-  - sudo pip install biopython
-  - sudo pip install nose
+  - sudo pip3 install biopython
+  - sudo pip3 install nose
   - sudo apt-get install -qq g++-6
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
   - sudo apt-get install libboost-all-dev
