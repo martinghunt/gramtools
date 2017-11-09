@@ -14,12 +14,19 @@ install:
   - (cd sdsl-lite && sudo ./install.sh /usr/local/)
   - git clone https://github.com/samtools/htslib.git
   - (cd htslib && make && sudo make install)
+python:
+  - 2.6
+  - 2.7
+  - 3.3
+  - 3.4
+  - 3.5
 script:
   - mkdir cmake-build-debug
   - cd cmake-build-debug
   - cmake ..
   - make
-  - cd ../libgramtools/tests/
-  - ./test_main
+  - cd ..
+  - (cd libgramtools/tests/ && ./test_main)
+  - nosetests
 notifications:
   email: false
