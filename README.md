@@ -14,7 +14,6 @@ Infering a reference genome from a population takes two steps:
 ### Build graph
 ```gramtools build --gram-directory ./gram --vcf ./vcf --reference ./reference --max-read-length 150```
 
-#### Parameters
 | parameter           | description                                                    |
 |---------------------|----------------------------------------------------------------|
 | `--gram-directory`  | outputdirectory for gramtools build files (created if missing) |
@@ -25,7 +24,6 @@ Infering a reference genome from a population takes two steps:
 ### Infer reference genome
 ```gramtools quasimap --gram-directory ./gram --reads ./reads```
 
-#### Parameters
 | parameter          | description                                                    |
 |--------------------|----------------------------------------------------------------|
 | `--gram-directory` | outputdirectory for gramtools build files (created if missing) |
