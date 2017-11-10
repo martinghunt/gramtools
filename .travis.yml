@@ -3,10 +3,9 @@ sudo: require
 python:
   - 3.6
 install:
-  - which -a pip
-  - sudo /opt/python/3.6/bin/pip install numpy
-  - sudo /opt/python/3.6/bin/pip install biopython
-  - sudo /opt/python/3.6/bin/pip install pytest
+  - sudo pip install numpy
+  - sudo pip install biopython
+  - sudo pip install pytest
 script:
   - (cd gramtools/ && python3.6 -m pytest)
 notifications:
