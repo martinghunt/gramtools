@@ -10,8 +10,13 @@ Genome inference using reference graphs: given a new sample, find a personalised
 First step, done once per species.
 * Generate a graph from known variants (VCF file) and the associated reference genome (gramtools supports this)
 
-Second step: given a new sample, quasimap reads to the graph and infer a personalised reference/
-* Infer a reference genome from the graph by analysing read coverage with exact matching.
+Next steps: given a new sample, 
+* quasimap reads to the graph and collect counts 
+* Infer a personalised reference genome 
+
+Left to the user:
+* Now do standard variant discovery
+* convert new VCF coordinates back to standard reference coordinates
 
 ### Build graph
 ```gramtools build --gram-directory ./gram --vcf ./vcf --reference ./reference --max-read-length 150```
