@@ -16,22 +16,8 @@ install:
   - sudo pip3 install numpy
   - sudo pip3 install biopython
   - sudo pip3 install nose
-  - sudo apt-get install -qq g++-6
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
-  - sudo apt-get install libboost-all-dev
-  - sudo apt-get install zlib1g-dev
-  - git clone https://github.com/simongog/sdsl-lite.git
-  - (cd sdsl-lite && sudo ./install.sh /usr/local/)
-  - git clone https://github.com/samtools/htslib.git
-  - (cd htslib && make && sudo make install)
 script:
-  - python3 -c "import nose; print(nose.__version__)"
-  - python3 -m "nose"
-  - mkdir cmake-build-debug
-  - cd cmake-build-debug
-  - cmake ..
-  - make
-  - cd ..
-  - (cd libgramtools/tests/ && ./test_main)
+  - python3.5 -c "import nose; print(nose.__version__)"
+  - python3.5 -m "nose"
 notifications:
   email: false
