@@ -1,14 +1,33 @@
 dist: trusty
 sudo: require
-language: python
+language: python, cpp
+compiler: gcc
 python:
   - 3.6
-script:
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+install:
   - source ~/virtualenv/python3.6/bin/activate
   - python --version
   - pip install numpy
   - pip install biopython
   - pip install pytest
+  - sudo apt-get install -qq g++-6
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+  - sudo apt-get install libboost-all-dev
+  - sudo apt-get install zlib1g-dev
+  - git clone https://github.com/simongog/sdsl-lite.git
+  - (cd sdsl-lite && sudo ./install.sh /usr/local/)
+  - git clone https://github.com/samtools/htslib.git
+  - (cd htslib && make && sudo make install)
+script:
   - (cd gramtools/ && python -m pytest)
+  - mkdir cmake-build-debug
+  - cd cmake-build-debug
+  - cmake ..
+  - make
+  - cd ..
+  - (cd libgramtools/tests/ && ./test_main)
 notifications:
   email: false
