@@ -25,13 +25,13 @@ install:
   - git clone https://github.com/samtools/htslib.git
   - (cd htslib && make && sudo make install)
 script:
+  - python3 -c "import nose; print(nose.__version__)"
+  - python3 -m "nose"
   - mkdir cmake-build-debug
   - cd cmake-build-debug
   - cmake ..
   - make
   - cd ..
   - (cd libgramtools/tests/ && ./test_main)
-  - python3 -c "import nose; print(nose.__version__)"
-  - python3 -m "nose"
 notifications:
   email: false
