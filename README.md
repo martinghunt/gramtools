@@ -30,5 +30,3 @@ Infering a reference genome from a population takes two steps:
 |--------------------|----------------------------------------------------------------|
 | `--gram-directory` | outputdirectory for gramtools build files (created if missing) |
 | `--reads`          | input read samples fastq file                                  |
-
-#### Parameters
