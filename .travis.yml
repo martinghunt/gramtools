@@ -1,7 +1,8 @@
+dist: trusty
 sudo: require
-env:
-  - DIST=trusty
-  - STACK=EC2
+language: python
+python:
+  - 3.6
 script:
   - source ~/virtualenv/python3.6/bin/activate
   - python --version
