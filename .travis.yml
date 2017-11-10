@@ -6,9 +6,9 @@ python:
 script:
   - source ~/virtualenv/python3.6/bin/activate
   - python --version
-  - sudo python -m pip install numpy
-  - sudo python -m pip install biopython
-  - sudo python -m pip install pytest
+  - pip install numpy
+  - pip install biopython
+  - pip install pytest
   - (cd gramtools/ && python -m pytest)
 notifications:
   email: false
