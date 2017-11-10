@@ -1,6 +1,6 @@
 dist: trusty
 sudo: require
-language: python, cpp
+language: python cpp
 compiler: gcc
 python:
   - 3.6
